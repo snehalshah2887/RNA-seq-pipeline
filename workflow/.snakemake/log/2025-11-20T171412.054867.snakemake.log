@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule fastqc in file /Users/sneha/Desktop/Github_repositories/RNA-seq-pipeline/workflow/Snakefile, line 7:
+Missing input files for rule fastqc:
+    output: ../results/fastqc/-sample_1_fastqc.html, ../results/fastqc/-sample_1_fastqc.zip
+    wildcards: sample=-sample_1
+    affected files:
+        ../data/-sample_1.fastq.gz

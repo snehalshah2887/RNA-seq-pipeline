@@ -1,0 +1,20 @@
+configfile: "../config/config.yaml"
+
+rule all:
+    input:
+        expand("../results/fastqc/{sample}_fastqc.html", sample=config["samples"])
+
+rule fastqc:
+    input:
+        "../data/{sample}.fastq.gz"
+    output:
+        html="../results/fastqc/{sample}_fastqc.html",
+        zip="../results/fastqc/{sample}_fastqc.zip"
+    threads: 2
+    log:
+        "../logs/fastqc_{sample}.log"
+    shell:
+        """
+        fastqc {input} --outdir ../results/fastqc/ &> {log}
+        """
+

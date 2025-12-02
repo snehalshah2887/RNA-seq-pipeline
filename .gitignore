@@ -1,0 +1,6 @@
+data/
+results/
+logs/
+*.sra
+*.fastq
+*.fastq.gz
